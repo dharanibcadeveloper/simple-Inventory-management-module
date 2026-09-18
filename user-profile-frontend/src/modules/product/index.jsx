@@ -96,8 +96,8 @@ export default function IndexProduct() {
         {products.map((product) => (
           <TableRow key={product.id}>
             <TableCell >{product.product_name}</TableCell>
-            <TableCell>{product.category_id}</TableCell>
-            <TableCell >{product.category_id}</TableCell>
+            <TableCell>{product.category_name}</TableCell>
+            <TableCell >{product.sku}</TableCell>
             <TableCell >{product.price}</TableCell>
             <TableCell >{product.stock_quantity}</TableCell>
             <TableCell > <Button type="button"   onClick={() => navigate(`/edit-product/${product.id}`)}><Edit/></Button> <Button type="submit"  onClick={() => handleDelete(product.id)} ><Trash/></Button></TableCell>

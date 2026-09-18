@@ -14,11 +14,12 @@ class ProductsController extends Controller
      */
     public function index()
     {
-         $products = DB::table('products')->get();
+        $products = DB::table('products')
+        ->join('categories', 'products.category_id', '=', 'categories.id')
+        ->select('products.*', 'categories.name as category_name')
+        ->get();
 
-    return response()->json([
-        'data' => $products
-    ], 200);
+        return response()->json(['data' => $products]);
 
     }
 
